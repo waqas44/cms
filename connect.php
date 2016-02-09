@@ -4,7 +4,7 @@
 // $host = "localhost";
 // $user = "";
 // $pass = "";
-// $db_name ="learning";
+// $db_name ="learning"; connecting to server
 
 $host = "localhost";
 $user = "root";
