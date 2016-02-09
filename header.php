@@ -54,7 +54,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
      
-      <?php if(isset($_SESSION['name'])
+      <?php // checking if user is login 
+      
+      
+      if(isset($_SESSION['name'])
 		){?>  <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name'] ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
