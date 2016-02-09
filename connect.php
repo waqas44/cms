@@ -21,7 +21,7 @@ if (!$connect)
 	{
 	//echo "<b>Connect to server Successfully! </b><br />";
 	$db = mysqli_select_db($connect, $db_name);
-	if (!$db)
+	if (!$db)// checking if not connected to data base
 		{
 		echo "could not select to DB {$db_name}<br />";
 		die("Select to DB failed: " . mysqli_error());
