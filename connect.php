@@ -10,7 +10,7 @@ $host = "localhost";
 $user = "root";
 $pass = "admin123";
 $db_name = "small_cms";
-$connect = mysqli_connect($host, $user, $pass, $db_name);
+$connect = mysqli_connect($host, $user, $pass, $db_name); //sending connection command
 
 if (!$connect)
 	{
