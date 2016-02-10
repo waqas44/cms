@@ -13,9 +13,10 @@ if (isset($_SESSION['name']))
 			$post_title  = data_clean($post_title);
 			$post_content = trim($_POST['post_content']);
 			$post_content = data_clean($post_content);
+			$post_author =  $_SESSION['email'];
+			$author_id =  $_SESSION['id'];
 			
-			
-			$user_login = "INSERT INTO posts (post_title, post_content) VALUES ('$post_title', '$post_content')";
+			$user_login = "INSERT INTO posts (post_title, post_content, post_author) VALUES ('$post_title', '$post_content', '$author_id')";
 			$post_qry_ins = mysqli_query($connect, $user_login);
 
 			// $return_if =  mysqli_fetch_array($user_qry);

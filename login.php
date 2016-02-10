@@ -13,16 +13,19 @@ if (isset($_POST['submit_li']) && $_POST['submit_li'] !== "") //checking if user
 			$user_pass = data_clean($user_pass);
 			$user_pass = sha1($user_pass);
 			
-		$user_login = "SELECT * FROM user WHERE email_id='$user_email'";
+		$user_login = "SELECT * FROM users WHERE email_id='$user_email'";
 		$user_qry = mysqli_query($connect, $user_login);
 		$return_if = mysqli_fetch_array($user_qry);
-		if (($return_if['email_id'] == $user_email) && ($return_if['password'] == $user_pass))
+		if (($return_if['email_id'] == $user_email) && ($return_if['password'] == $user_pass)) //checking if user email and password match
 			{
 			echo "You are loged in suceess fully";
 			
-			$user_name = $_SESSION['name'] = $return_if['full_name'];
+			$user_name = $_SESSION['name'] = $return_if['first_name'];
+			$user_email = $_SESSION['email'] = $return_if['email_id'];
+			$user_id = $_SESSION['id'] = $return_if['user_id'];
+			
 			echo $user_name;
-			header('refresh:1; url=index.php');
+			header('refresh:55; url=index.php');
 			}
 		  else
 			{
