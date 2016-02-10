@@ -25,7 +25,8 @@
 	  }
   
    
-  $posts_query = "SELECT * FROM posts";
+  $posts_query = "SELECT *  FROM posts RIGHT JOIN users
+     ON posts.post_author = users.user_id ";
   
      $posts_fetch  = mysqli_query($connect, $posts_query); 
     
@@ -34,8 +35,10 @@
  		){
 	//foreach ($posts_get as $key => $val ){   
  
-     	$authorName = getAuthorName( $posts_get['post_author']);			
-	   echo $authorName;
+    // 	$authorName = getAuthorName( $posts_get['post_author']);	
+     $authorName = $posts_get['first_name'];      
+		
+	 //  echo $authorName;
 	   
 ?>
 
@@ -54,7 +57,7 @@
 <span class="label label-info">DATE : <?php echo $posts_get['post_date'];  ?></span>
  
 
-<span class="label label-info">author : <?php echo $posts_get['post_author']; ?></span>
+<span class="label label-info">author : <?php echo $posts_get['first_name']; ?></span>
 <?php } ?>
 
 
