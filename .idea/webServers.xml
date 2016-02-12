@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0359adc8-72e9-47b0-a782-ff9166425c2d" name="localserver" url="http://localhost/small-cms">
+        <fileTransfer mountedRoot="D:\wamp\www\small-cms" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

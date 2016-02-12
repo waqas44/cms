@@ -13,11 +13,11 @@
   $result = mysqli_query($connect,$find);
   
   $posts_result = mysqli_fetch_array($result);*/
-  
-  
-  function getAuthorName($userId){
+
+
+  function getAuthorName($userId) {
  global $connect;
-	 $q_author = "SELECT * FROM users WHERE user_id = '$userId' ";
+	 $q_author = "SELECT * FROM users WHERE user_id = '$userId ";
   $result = mysqli_query($connect,$q_author);
   $array_author =  mysqli_fetch_array($result);
   $authorName = $array_author["first_name"] ;
