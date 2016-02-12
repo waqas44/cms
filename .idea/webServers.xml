@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="0359adc8-72e9-47b0-a782-ff9166425c2d" name="localserver" url="http://localhost/small-cms">
+      <webServer id="1033c76c-f1e9-4b3c-977f-76a5934d821c" name="Cms for test" url="http://localhost/small-cms">
         <fileTransfer mountedRoot="D:\wamp\www\small-cms" accessType="MOUNT" />
       </webServer>
     </option>

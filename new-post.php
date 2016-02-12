@@ -6,17 +6,19 @@ if (isset($_SESSION['name']))
 <?php
 	if (isset($_POST['submit_content']))
 		{
-		if (isset($_POST['post_title']) && ($_POST['post_title'] != "") 
+		if (isset($_POST['post_title']) && ($_POST['post_title'] != "")
 		&& isset($_POST['post_content']) && ($_POST['post_content'] != ""))
 			{
 			$post_title = trim($_POST['post_title']);
 			$post_title  = data_clean($post_title);
 			$post_content = trim($_POST['post_content']);
 			$post_content = data_clean($post_content);
+			$post_date = trim($_POST['date_str']);
 			$post_author =  $_SESSION['email'];
 			$author_id =  $_SESSION['id'];
-			
-			$user_login = "INSERT INTO posts (post_title, post_content, post_author) VALUES ('$post_title', '$post_content', '$author_id')";
+
+			$user_login = "INSERT INTO posts (post_title, post_content, post_author, date_str) VALUES
+('$post_title', '$post_content', '$author_id','$post_date')";
 			$post_qry_ins = mysqli_query($connect, $user_login);
 
 			// $return_if =  mysqli_fetch_array($user_qry);
@@ -46,8 +48,12 @@ if (isset($_SESSION['name']))
 
 <input type="text" name="post_title" class="form-control" placeholder="Post Title" >
 </div>
-<div class="form-group"> 
+<div class="form-group">
 <textarea name="post_content" class="form-control"  rows="15" placeholder="Post Content"></textarea>
+
+
+	<input type="hidden" value="<?php echo time(); ?>" name="date_str" >
+
 </div>
 <input class="btn btn-default" type="submit" name="submit_content" value="submit">
 </form>
@@ -73,7 +79,7 @@ if (isset($_SESSION['name']))
 <?php
 	}
   else
-	{ 
+	{
 	echo "you need to login";
 	header('refresh:2, url=login.php');
 	} ?>

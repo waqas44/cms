@@ -36,7 +36,6 @@
 
 
 <div class="container wrapper">
-
 <div class="col-sm-12">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
