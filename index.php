@@ -54,6 +54,7 @@ while ($posts_get = mysqli_fetch_array($posts_fetch)
             echo $the_content = $posts_get['post_content'];
 			//for the sake of comment
 			//this is another version
+			//to check if it will create two repository on local or on server
         } ?></p>
     <p><?php //echo $posts_get['post_content'];
         ?> </p>
