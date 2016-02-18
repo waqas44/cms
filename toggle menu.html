@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle menu</title>
+
+   <style type="text/css">
+
+       div.abc {
+           height: 0px;
+           float: left;
+
+
+       }
+       div.abc  ul{
+           padding: 0;
+         margin: 0;
+           list-style: none;
+
+           float: left;
+
+
+       }
+
+
+   </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$('a.menu_top').on('click',function(){
+
+    var currentNavHeight = $('div.abc').height();
+    if(currentNavHeight < 5){
+
+        var newNavheight = $('div.abc > ul').height()+15;
+                $('div.abc').animate({'height':newNavheight+'px'},750);
+
+    }else{
+        $('div.abc').animate({'height':'0px' },750);
+
+
+    }
+
+});
+
+
+});
+
+</script>
+</head>
+<body>
+<a class='menu_top' href="#">HI</a><br><br>
+<div class="abc">
+
+
+
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

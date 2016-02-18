@@ -1,18 +1,23 @@
 <?php include "header.php"; ?>
+<div class="row">
+    <div class="col-sm-3">
+        <ul>
+            <li></li>
+        </ul>
+        <ul>
+            <li><a href="posts.php">Posts</a></li>
+            <li><a href="pages.php">Pages</a></li>
+            <li><a href="catogery.php">Catogery</a></li>
+        </ul>
 
+    </div>
+</div>
 
 
 <?php
 
 
-/* $post_author_id = $posts_get['post_author'];
 
-// $post_author = "SELECT * FROM users WHERE user_id = ";
-
-$find = "SELECT * FROM users WHERE user_id= '$post_author_id'";
-$result = mysqli_query($connect,$find);
-
-$posts_result = mysqli_fetch_array($result);*/
 
 
 function getAuthorName($userId)
@@ -44,6 +49,7 @@ while ($posts_get = mysqli_fetch_array($posts_fetch)
 
     $the_content = $posts_get['post_content'];
 
+
     ?>
 
 
@@ -52,8 +58,7 @@ while ($posts_get = mysqli_fetch_array($posts_fetch)
             echo $the_content = substr($the_content, 0, 25) . '<br><a href=' . $posts_get['post_id'] . "> Read more</a>";
         } else {
             echo $the_content = $posts_get['post_content'];
-			//for the sake of comment
-			//this is another version
+
         } ?></p>
     <p><?php //echo $posts_get['post_content'];
         ?> </p>

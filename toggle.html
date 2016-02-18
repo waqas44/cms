@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle menu</title>
+
+   <style type="text/css">
+
+       /*div.abc {
+           height: 0px;
+           float: left;
+
+
+       }
+       div.abc  ul{
+           padding: 0;
+         margin: 0;
+           list-style: none;
+
+           float: left;
+
+
+       }*/
+.dropdown-menu{
+    padding:0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Arial Unicode MS";
+}
+       .dropdown-menu a{
+           text-decoration: none;
+           color: #d43f3a;
+       }
+       .dropdown-menu li{
+           border-bottom: 1px solid #ccc;
+       }
+       .xyz{
+           border: 1px solid #2aabd2;
+
+
+       }
+
+
+   </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$('a.menu_top').on('click',function(){
+
+   $('div.abc').toggle(750);
+
+
+
+});
+    $(window).resize(function(){
+
+        if($(this).width() > 626){
+
+            $('.menu').hide();
+
+        }else{
+            $('.menu').show();
+            $('.menu').addClass('xyz');
+        }
+});
+
+
+});
+
+</script>
+</head>
+<body>
+<div class="menu"><a class='menu_top' href="#">HI</a><br><br>
+    <div class="abc">
+
+
+
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action is a great</a></li>
+    <li><a href="#">Another action looks good</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+</ul>
+
+</div></div>
+
+</body>
+</html>
